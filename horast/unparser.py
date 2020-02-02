@@ -129,6 +129,9 @@ class Unparser(static_typing.unparser.Unparser):
         # import ipdb; ipdb.set_trace()
         self.write(node.comment)
 
+    def _Type(self, t):
+        self.write(t)
+
     def _generic_Directive(self, node, prefix: str = ''):
         self.fill('#{}'.format(prefix))
         self.write(node.expr)
